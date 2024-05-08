@@ -1,0 +1,9 @@
+{
+    "db_config": {
+        "host": "localhost",
+        "user": "collin",
+        "password": "ilikeburgers",
+        "db": "musicApp",
+        "charset": "utf8mb4"
+    }
+}
