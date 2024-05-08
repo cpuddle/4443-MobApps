@@ -11,7 +11,7 @@ const LoginScreen = () => {
   const handleLogin = () => {
     // Implement login logic here
     // Example POST request to your FastAPI backend
-    fetch('https://frankofile.sendmessage.live/login', {
+    fetch('...', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

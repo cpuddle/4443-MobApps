@@ -12,7 +12,7 @@ const RegistrationScreen = () => {
   const handleRegister = () => {
     // Implement registration logic here
     // Example POST request to your FastAPI backend
-    fetch('https://frankofile.sendmessage.live/register', {
+    fetch('...', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

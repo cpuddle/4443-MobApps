@@ -22,7 +22,7 @@ install()
 console = Console()
 
 import os
-os.chdir("/home/collin/musicApi")
+os.chdir("...")
 
 # Customize traceback
 install(show_locals=True)  # Show local variables in tracebacks
