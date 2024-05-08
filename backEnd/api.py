@@ -92,12 +92,7 @@ class Login(BaseModel):
     password: str
 
 db_config = {
-    "host": "localhost",
-    "user": "musicApp",
-    "password": "musicMakesYouWannaDance",
-    "db": "musicApp",  # Replace with your actual database name
-    "charset": "utf8mb4",
-    "cursorclass": pymysql.cursors.DictCursor,
+    ...
 }
 
 # conn = pymysql.connect(**db_config)
@@ -438,26 +433,6 @@ def post_user(user: User):
 
 @app.post("/login", tags=["User"])
 def post_login(login: Login):
-    """
-        Insert a new user into the database.
-    ```
-    {
-      "username": "lucygirl",
-      "password": "lucy"
-    }
-    or
-       {
-      "email": "lucy@bob.com",
-      "password": "lucy"
-    }
-    angel@badill.com
-    passwordpasswordpassword
-
-    hash_result = hashlib.sha256('lucy'.encode()).hexdigest() = dc99e9aa86fab83a062cff5e0808391757071a3d5dbb942802d5f923aaead3b4
-    SELECT SHA2('lucy', 256); = 'dc99e9aa86fab83a062cff5e0808391757071a3d5dbb942802d5f923aaead3b4'
-    UPDATE `users` SET `password` = SHA2('bob', 256) WHERE `user_id` = 52;
-    ```
-    """
     info = dict(login)
     email = info.get("email", None)
     username = info.get("user_name", None)
@@ -517,15 +492,12 @@ async def upload(file:UploadFile = File(...)):
     return JSONResponse(content={"success": True, "file_path": file_path, "message": "File Uploaded Successfully"})
 
 if __name__ == "__main__":
-    # gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:main --bind 0.0.0.0:8000 --keyfile=./key.pem --certfile=./cert.pem
-
-    # uvicorn.run("api:app", host="kidsinvans.fun", port=8080, log_level="debug", reload=True)
 
     uvicorn.run(
         "api:app",
         host="0.0.0.0",  # Use 0.0.0.0 to bind to all network interfaces
         #port=443,  # Standard HTTPS port
-        port=8889,  # Standard HTTPS port
+        port=...,  # Standard HTTPS port
         log_level="debug",
         # ssl_keyfile="/etc/letsencrypt/archive/kidsinvans.fun/privkey1.pem",
         # ssl_certfile="/etc/letsencrypt/archive/kidsinvans.fun/fullchain1.pem",
